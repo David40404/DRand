@@ -3,7 +3,7 @@
 #include <time.h>
 
 namespace DRand {
-  // recommended
+  // recommended 10/10
   unsigned int DRand32() {
       static unsigned long long seed = (unsigned long long)time(NULL);
   
@@ -15,7 +15,7 @@ namespace DRand {
       return static_cast <unsigned int> (seed % UINT32_MAX);
   }
   
-  // not tested
+  // recommended 10/10
   unsigned int DRand32x() {
       static unsigned long long seed = static_cast <unsigned long long>(time(NULL));
       static unsigned long long special_seed = 0;
@@ -29,7 +29,7 @@ namespace DRand {
       return static_cast <unsigned int> (seed % UINT32_MAX);
   }
 
-  // not tested
+  // recommended 8/10
   unsigned int DRand32o() {
       static unsigned long long seed = static_cast <unsigned long long>(time(NULL));
 
@@ -41,7 +41,7 @@ namespace DRand {
       return static_cast <unsigned int> (seed % UINT16_MAX);
   }
 
-  // recommended
+  // recommended 8/10
   unsigned short DRand16() {
       static unsigned int seed = (unsigned int)time(NULL);
 
@@ -53,7 +53,7 @@ namespace DRand {
       return static_cast <unsigned short> (seed % UINT16_MAX);
   }
 
-  // recommended
+  // recommended 10/10
   unsigned short DRand16x() {
       static unsigned int seed = (unsigned int)time(NULL);
       static unsigned int special_seed = 0;
@@ -67,7 +67,7 @@ namespace DRand {
       return static_cast <unsigned short> (seed % UINT16_MAX);
   }
 
-  // recommended
+  // not recommended 6/10
   unsigned short DRand16o() {
       static unsigned int seed = static_cast <unsigned short> (time(NULL));
       static const unsigned int a = 2932355;
