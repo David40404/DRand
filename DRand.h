@@ -32,6 +32,13 @@ namespace DRand {
       return pseudo_random_table[seed % UINT8_MAX];
   }
 
+  //recomended 6/10
+  inline unsigned char DRand8f() {
+		static unsigned char seed = (unsigned char)time(NULL);
+		seed = ((seed + 1) ^ 156) & 0xFF;
+		return pseudo_random_table[seed];
+	}
+
   // recommended 10/10
   unsigned int DRand32() {
       static unsigned long long seed = (unsigned long long)time(NULL);
