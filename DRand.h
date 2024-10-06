@@ -35,7 +35,7 @@ namespace DRand {
   // not recomended 6/10
   inline unsigned char DRand8x() {
 	static unsigned short seed = (unsigned char)time(NULL);
-	seed = ((seed + 1) ^ 156);
+	seed = ((seed + 1) ^ 156) + 7814;
 	return pseudo_random_table[seed % UINT8_MAX];
   }
 
