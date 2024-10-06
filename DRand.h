@@ -33,11 +33,11 @@ namespace DRand {
   }
 
   // not recomended 6/10
-  inline unsigned char DRand8f() {
-		static unsigned char seed = (unsigned char)time(NULL);
-		seed = ((seed + 1) ^ 156) & 0xFF;
-		return pseudo_random_table[seed];
-	}
+  inline unsigned char DRand8x() {
+	static unsigned short seed = (unsigned char)time(NULL);
+	seed = ((seed + 1) ^ 156);
+	return pseudo_random_table[seed % UINT8_MAX];
+  }
 
   // recommended 10/10
   unsigned int DRand32() {
@@ -74,7 +74,7 @@ namespace DRand {
 
       seed ^= (seed >> 2) * seed + a;
 
-      return static_cast <unsigned int> (seed % UINT16_MAX);
+      return static_cast <unsigned int> (seed % UINT32_MAX);
   }
 
   // recommended 8/10
